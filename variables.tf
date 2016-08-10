@@ -35,12 +35,24 @@ variable "post_tag" {
   description = "Post-phrase for tags"
   default = "Staging"
 }
+variable "tag_service" {
+  description = "Service tag"
+}
+variable "tag_environment" {
+  description = "Environment tag"
+}
+variable "tag_version" {
+  description = "Version tag"
+}
 variable "aws_ssl_certificate_arn_id" {
   description = "ARN ID of the ssl certificate created in AWS"
   default = ""
 }
 variable "key_pair_name" {
   description = "Name of AWS key pair to use with instances"
+}
+variable "s3_bucket_name" {
+  description = "Name of S3 Bucket"
 }
 
 
@@ -49,6 +61,12 @@ variable "key_pair_name" {
  */
 variable "dcos_cluster_name" {
   description = "DC/OS cluster name"
+}
+variable "dcos_username" {
+  description = "DC/OS Username"
+}
+variable "dcos_password" {
+  description = "DC/OS password"
 }
 variable "dcos_master_count" {
   description = "Master count"
@@ -134,22 +152,18 @@ variable "public_agent_asg_health_check_type" {
   default = "EC2"
 }
 
-
-
-
-/**
- * IaC: Docker Registry
- */
-variable "aws_s3_access_key" {
-  description = "AWS IAM Access key"
+variable hosted_zone_id {
+  description = "ID for the domain hosted zone"
 }
-variable "aws_s3_secret_key" {
-  description = "AWS IAM Secret key"
+variable domain_name {
+  description = "Name of the domain where record(s) need to create"
 }
-variable "aws_s3_bucket_name" {
-  description = "AWS S3 Bucket name"
+variable master_dns_record_name {
+  description = "Name of the record that you want to create for load balancer"
 }
-
+variable tyk_dns_record_name {
+  description = "Name of the record that you want to create for load balancer"
+}
 
 
 /**
@@ -174,7 +188,7 @@ variable "redis_parameter_group_name" {
 
 variable "tyk_config" {
   description = "Tyk marathon configuration files"
-  default = "templates/tyk.template"
+  default = "templates/tyk.tpl"
 }
 variable "tyk_api_key" {
   description = "Tyk Dashboard API Access Credentials in the Users section of Dashboard"
@@ -192,12 +206,12 @@ variable "tyk_secret" {
 
 variable "marathon_lb_config" {
   description = "Marathon-lb Autoscale marathon configuration files"
-  default = "templates/marathon_lb.template"
+  default = "templates/marathon_lb.tpl"
 }
 
 variable "autoscale_config" {
   description = "Marathon-lb Autoscale marathon configuration files"
-  default = "templates/marathon-lb-autoscale.template"
+  default = "templates/marathon-lb-autoscale.tpl"
 }
 variable "autoscale_haproxy" {
   description = "Url for haproxy (Marathon-lb)"

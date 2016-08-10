@@ -19,8 +19,12 @@ export AWS_SECRET_ACCESS_KEY="asecretkey"
 export AWS_DEFAULT_REGION="ap-northeast-1"
 ```
 - `cp terraform.dummy terraform.tfvars`
-- `cat ../terraform.out >> terraform.tfvars`.
-- Modify params in `terraform.tfvars`
+- Import variables if using IaC-Manager 
+`cat $HOME/terraform.out >> terraform.tfvars`. 
+- Modify params in `terraform.tfvars` for the required packages
+- Modify the tag or branch in source property of each module in `main.tf` file.   
+`source = "github.com/microservices-today/IaC-dcos?ref=v1.0.2"` 
+`source = "github.com/microservices-today/IaC-dcos?ref=master"` 
 - Modify params in `variable.tf` to change subnet or add AMI accordingly to your aws region
 - Run `terraform get` to import the modules.
 - Run `terraform plan` to see the plan to execute.
@@ -42,8 +46,7 @@ export AWS_DEFAULT_REGION="ap-northeast-1"
 | public_subnet_id | Public subnet ID (using in external ELB creation) | - | yes |
 | public_security_group_id | Public security group ID (For adding inbound rules required for external Tyk ELB) | - | yes |
 | private_subnet_az | Private subnet availability zone | - | yes |
-| external_elb_instance_ids | IDs of instances to attach with external load balancer in comma-separated format | - | yes |
-| internal_elb_instance_ids | IDs of instances to attach with internal load balancer in comma-separated format | - | yes |
+| public_agent_ids | IDs of instances to attach with external load balancer in comma-separated format | - | yes |
 | pre_tag | Pre-phrase for tags | `"pre"` | no |
 | post_tag | Post-phrase for tags | `"post"` | no |
 | redis_engine_version | Version of Redis engine | `"2.8.24"` | no |
