@@ -1,9 +1,16 @@
 pre_tag = "Microservice"
 post_tag = "Staging"
+tag_service = "DCOS 1.73"
+tag_environment = "Staging"
+tag_version = "1.02"
 aws_region     = "ap-northeast-1"             /* ap-northeast-1 for Tokyo, ap-southeast-1 for SG */
 aws_ssl_certificate_arn_id = ""
 key_pair_name = "dummy"
 
+/* Hosted Zone Configuration */
+master_hosted_zone_id = "DUMMY"
+master_domain_name = "dummy.com"
+master_dns_record_name = "Dummy"                     /* eg: dcos-test, then record name would be dcos-test.dummy.com */
 
 /**
  * DC/OS
@@ -19,6 +26,11 @@ dcos_password = "dummy"
 tyk_api_key = "Dummy"
 tyk_rpc_credentials = "Dummy"
 tyk_secret = "Dummy"
+
+/* Hosted Zone Configuration */
+tyk_hosted_zone_id = "DUMMY"
+tyk_domain_name = "dummy.com"
+tyk_dns_record_name = "Dummy"                     /* eg: dcos-test, then record name would be dcos-test.dummy.com */
 
 
 /**
