@@ -4,8 +4,8 @@ variable "aws_region" {
 variable "coreos_amis" {
   description = "CoreOS AMIs by region"
   default = {
-    ap-northeast-1 = "ami-bc8778dd"
-    ap-southeast-1 = "ami-40815d23"
+    ap-northeast-1 = "ami-56498b37"
+    ap-southeast-1 = "ami-b9ed34da"
   }
 }
 variable "centos_amis" {
