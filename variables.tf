@@ -185,6 +185,9 @@ variable "redis_parameter_group_name" {
   description = "Redis parameter group name"
   default = "default.redis2.8"
 }
+variable redis_cluster_name {
+  description = "Name must contain only letters, digits, or hyphens and be 20 characters or less in length."
+}
 
 variable "tyk_config" {
   description = "Tyk marathon configuration files"

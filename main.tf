@@ -70,6 +70,7 @@ module "api-gateway" {
   tag_version = "${var.tag_version}"
 
   redis_engine_version = "${var.redis_engine_version}"
+  redis_cluster_name = "${var.redis_cluster_name}"
   redis_node_type = "${var.redis_node_type}"
   redis_port = "${var.redis_port}"
   redis_parameter_group_name = "${var.redis_parameter_group_name}"

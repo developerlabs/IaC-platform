@@ -25,6 +25,7 @@ dcos_password = "dummy"
 /**
  * IaC: API Gateway
  */
+redis_cluster_name = "Dummy"
 tyk_api_key = "Dummy"
 tyk_rpc_credentials = "Dummy"
 tyk_secret = "Dummy"
