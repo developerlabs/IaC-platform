@@ -6,6 +6,7 @@ variable "coreos_amis" {
   default = {
     ap-northeast-1 = "ami-56498b37"
     ap-southeast-1 = "ami-b9ed34da"
+    ap-south-1 = "ami-985025f7"
   }
 }
 variable "centos_amis" {
@@ -13,6 +14,7 @@ variable "centos_amis" {
   default = {
     ap-southeast-1 = "ami-f068a193"
     ap-northeast-1 = "ami-eec1c380"
+    ap-south-1 = "ami-95cda6fa"
   }
 }
 variable "vpc_id" {
@@ -246,17 +248,34 @@ variable "logstash_instance_type" {
   description = "Logstash instance type"
   default = "t2.micro"
 }
-
 variable "logstash_server_disk_size" {
   description = "The size of logstash node root block device disk in GB"
   default = "8"
 }
-
 variable "logstash_docker_image" {
   description = "Logstash docker image form public docker registry"
   default= "vysakhqb/elk-aws-elastic"
 }
 
-variable "elasticsearch_domain_name" {
-  description = "AWS elasticsearch domain name"
+variable "etcd_discovery_id" {
+  description = "Discovery id from discovery.etcd.io"
+  default = "0aad0e6339ea9656b7469e3b0d9720fe"
 }
+
+
+/**
+ * IaC : maraton-snapshot
+ */
+
+variable "marathon_snapshot_dcos_config" {
+  description = "DCOS configuration files"
+  default = "templates/dcos-config.json"
+}
+variable "marathon_snapshot_s3_config" {
+  description = "s3 configuration files"
+  default = "templates/s3-config.json"
+}
+variable "marathon_snapshot_dcos_env" {
+  description = "The folder under which the backup will be stored in S3"
+}
+variable "marathon_snapshot_backup_s3_bucket_name" {}
