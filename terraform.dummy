@@ -41,3 +41,11 @@ s3_bucket_name = "dummy"
  * IaC: elk
  */
 elasticsearch_domain_name = "Dummy"
+
+
+/**
+ * IaC: marathon-snapshot
+ */
+marathon_snapshot_dcos_env = "Dummy"
+marathon_snapshot_backup_s3_bucket_name = "Dummy"
+
