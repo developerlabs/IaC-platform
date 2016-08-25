@@ -35,3 +35,9 @@ tyk_secret = "Dummy"
  * IaC: Docker Registry
  */
 s3_bucket_name = "dummy"
+
+
+/**
+ * IaC: elk
+ */
+elasticsearch_domain_name = "Dummy"

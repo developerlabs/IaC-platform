@@ -232,3 +232,29 @@ variable "autoscale_threshold_instances" {
   description = "Scaling will occur when the target number of instances differs from the actual number by at least this amount"
   default = 1
 }
+
+/**
+ * IaC : elk
+ */
+variable "elasticsearch_domain_name" {
+  description = "AWS elasticsearch domain name"
+}
+
+variable "logstash_instance_type" {
+  description = "Logstash instance type"
+  default = "t2.micro"
+}
+
+variable "logstash_server_disk_size" {
+  description = "The size of logstash node root block device disk in GB"
+  default = "8"
+}
+
+variable "logstash_docker_image" {
+  description = "Logstash docker image form public docker registry"
+  default= "vysakhqb/elk-aws-elastic"
+}
+
+variable "elasticsearch_domain_name" {
+  description = "AWS elasticsearch domain name"
+}
