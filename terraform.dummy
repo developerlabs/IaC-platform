@@ -20,6 +20,7 @@ tyk_dns_record_name = "Dummy"
 dcos_cluster_name = "Dummy-Prod"
 dcos_username = "dummy"
 dcos_password = "dummy"
+additional_subnet_availability_zone = "dummy" /* eg: ap-northeast-1c for Tokyo, ap-southeast-1b for SG */
 
 
 /**

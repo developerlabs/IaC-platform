@@ -164,7 +164,9 @@ variable master_dns_record_name {
 variable tyk_dns_record_name {
   description = "Name of the record that you want to create for load balancer"
 }
-
+variable additional_subnet_availability_zone {
+  description = "The availability zone for additional subnet to be created"
+}
 
 /**
  * IaC: API Gateway
