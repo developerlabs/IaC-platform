@@ -254,12 +254,19 @@ variable "logstash_server_disk_size" {
 }
 variable "logstash_docker_image" {
   description = "Logstash docker image form public docker registry"
-  default= "vysakhqb/elk-aws-elastic"
+  default= "microservicestoday/elk-aws-elastic"
 }
-
-variable "etcd_discovery_id" {
-  description = "Discovery id from discovery.etcd.io"
-  default = "0aad0e6339ea9656b7469e3b0d9720fe"
+variable "elastic_instance_type" {
+  description = "Elasticsearch instance type"
+  default = "m3.large.elasticsearch"
+}
+variable "elastic_instance_count" {
+  description = "Number of instances in the cluster"
+  default = "1"
+}
+variable "automated_snapshot_start_hour" {
+  description = "Hour during which the elasticsearch service takes an automated daily snapshot of the indices in the domain."
+  default = 23
 }
 
 
