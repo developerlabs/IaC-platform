@@ -50,3 +50,6 @@ terraform.tfvars*
 
 # Mac 
 .DS_Store
+
+# Terraform module files
+.terraform

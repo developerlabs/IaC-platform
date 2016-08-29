@@ -49,7 +49,6 @@ module "dcos" {
   dcos_master_count = "${var.dcos_master_count}"
 
   s3_bucket_name = "${var.s3_bucket_name}"
-  additional_subnet_availability_zone = "${var.additional_subnet_availability_zone}"
 }
 
 
