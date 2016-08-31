@@ -19,10 +19,12 @@ tyk_dns_record_name = "Dummy"
  * DC/OS
  */
 dcos_cluster_name = "Dummy-Prod"
-dcos_username = "dummy"
-dcos_password = "dummy"
+dcos_edition  = "enterprise"    /* enterprise, community */
+dcos_username = "dummy"     /* skip for community edition */
+dcos_password = "dummy"     /* skip for community edition */
 /** Dev example
  * dcos_master_count = "1"
  * agent_asg_desired_capacity = "1"
  * public_agent_asg_desired_capacity = "1"
+ * dcos_installer_url = { DCOS_EDITION = "--url--" }   // DCOS_EDITION can be enterprise or community
  */

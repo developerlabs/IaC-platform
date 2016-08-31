@@ -76,7 +76,10 @@ variable "dcos_master_count" {
 }
 variable "dcos_installer_url" {
   description = "DCOS installer url"
-  default = "https://downloads.mesosphere.com/dcos/stable/dcos_generate_config.ee.sh"
+  default = {
+    "enterprise" = "https://downloads.mesosphere.com/dcos/stable/dcos_generate_config.ee.sh"
+    "community"  = "https://downloads.dcos.io/dcos/EarlyAccess/dcos_generate_config.sh"
+  }
 }
 variable "master_user_data" {
   description = "Master Cloud config files"
@@ -165,4 +168,12 @@ variable master_dns_record_name {
 }
 variable tyk_dns_record_name {
   description = "Name of the record that you want to create for load balancer"
+}
+variable "filebeat_docker_image" {
+  description = "Filebeat docker image form public docker registry"
+  default= "microservicestoday/filebeat"
+}
+variable "dcos_edition" {
+  description = "DCOS edition type, enterprise/community"
+  default = "enterprise"
 }
