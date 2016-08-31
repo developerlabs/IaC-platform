@@ -147,3 +147,10 @@ module "maraton-snapshot" {
   dcos_config = "${var.marathon_snapshot_dcos_config}"
   dcos_env = "${var.marathon_snapshot_dcos_env}"
 }
+
+module "ecr" {
+  source = "github.com/microservices-today/IaC-ecr.git?ref=master"
+  aws_region = "${var.aws_region}"
+  dcos_url = "${module.dcos.dcos_url}"
+  dcos_acs_token = "${module.dcos.dcos_acs_token}"
+}
