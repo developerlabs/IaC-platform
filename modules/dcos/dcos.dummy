@@ -21,19 +21,3 @@ tyk_dns_record_name = "Dummy"
 dcos_cluster_name = "Dummy-Prod"
 dcos_username = "dummy"
 dcos_password = "dummy"
-/**
- * IaC: API Gateway
- */
-redis_cluster_name = "Dummy"
-tyk_api_key = "Dummy"
-tyk_rpc_credentials = "Dummy"
-tyk_secret = "Dummy"
-/**
- * IaC: elk
- */
-elasticsearch_domain_name = "Dummy"
-/**
- * IaC: marathon-snapshot
- */
-marathon_snapshot_dcos_env = "Dummy"
-marathon_snapshot_backup_s3_bucket_name = "Dummy"

@@ -50,8 +50,24 @@ module "dcos" {
 
   s3_bucket_name = "${var.s3_bucket_name}"
 }
+module "docker-registry" {
+  source = "github.com/microservices-today/IaC-dcos-docker-registry?ref=master"
 
+  bootstrap_ip = "${module.dcos.bootstrap_ip}"
+  agent_ips = "${module.dcos.agent_ips}"
+  agent_count = "${module.dcos.agent_count}"
+  aws_region = "${var.aws_region}"
+  s3_bucket_name = "${var.s3_bucket_name}"
 
+  pre_tag = "${var.pre_tag}"
+  post_tag = "${var.post_tag}"
+  tag_service = "${var.tag_service}"
+  tag_environment = "${var.tag_service}"
+  tag_version = "${var.tag_version}"
+
+  dcos_url = "${module.dcos.dcos_url}"
+  dcos_acs_token = "${module.dcos.dcos_acs_token}"
+}
 module "api-gateway" {
   source = "github.com/microservices-today/IaC-api-gateway?ref=master"
 
@@ -93,26 +109,6 @@ module "api-gateway" {
   tyk_secret = "${var.tyk_secret}"
 }
 
-
-module "docker-registry" {
-  source = "github.com/microservices-today/IaC-dcos-docker-registry?ref=master"
-
-  bootstrap_ip = "${module.dcos.bootstrap_ip}"
-  agent_ips = "${module.dcos.agent_ips}"
-  agent_count = "${module.dcos.agent_count}"
-  aws_region = "${var.aws_region}"
-  s3_bucket_name = "${var.s3_bucket_name}"
-
-  pre_tag = "${var.pre_tag}"
-  post_tag = "${var.post_tag}"
-  tag_service = "${var.tag_service}"
-  tag_environment = "${var.tag_service}"
-  tag_version = "${var.tag_version}"
-
-  dcos_url = "${module.dcos.dcos_url}"
-  dcos_acs_token = "${module.dcos.dcos_acs_token}"
-}
-
 module "elk" {
   source = "github.com/microservices-today/IaC-elk.git?ref=master"
 
@@ -132,7 +128,6 @@ module "elk" {
   elastic_instance_count = "${var.elastic_instance_count}"
   automated_snapshot_start_hour = "${var.automated_snapshot_start_hour}"
 }
-
 module "maraton-snapshot" {
   source = "github.com/microservices-today/IaC-marathon-snapshots.git?ref=master"
 
@@ -141,8 +136,6 @@ module "maraton-snapshot" {
   s3_config = "${var.marathon_snapshot_s3_config}"
 
   dcos_url = "${module.dcos.dcos_url}"
-  pre_tag = "${var.pre_tag}"
-  post_tag = "${var.post_tag}"
   dcos_url_token = "${module.dcos.dcos_acs_token}"
   dcos_config = "${var.marathon_snapshot_dcos_config}"
   dcos_env = "${var.marathon_snapshot_dcos_env}"

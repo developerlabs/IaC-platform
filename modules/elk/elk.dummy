@@ -1,0 +1,4 @@
+/**
+ * IaC: elk
+ */
+elasticsearch_domain_name = "Dummy"
