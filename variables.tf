@@ -166,8 +166,6 @@ variable master_dns_record_name {
 variable tyk_dns_record_name {
   description = "Name of the record that you want to create for load balancer"
 }
-
-
 /**
  * IaC: API Gateway
  */
@@ -234,6 +232,7 @@ variable "autoscale_threshold_instances" {
   description = "Scaling will occur when the target number of instances differs from the actual number by at least this amount"
   default = 1
 }
+
 /**
  * IaC : elk
  */
@@ -265,6 +264,7 @@ variable "automated_snapshot_start_hour" {
   description = "Hour during which the elasticsearch service takes an automated daily snapshot of the indices in the domain."
   default = 23
 }
+
 
 /**
  * IaC : maraton-snapshot

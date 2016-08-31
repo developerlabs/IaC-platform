@@ -3,9 +3,6 @@ Script to setup a DC/OS cluster and other applications
  - DC/OS cluster
  - Docker private registry
  - API gateway
- - ELK
- - Marathon Snapshot
- - EC2 Container Registry
  
 
 #### Pre-requisites
@@ -14,14 +11,13 @@ Script to setup a DC/OS cluster and other applications
 - AWS CLI
 
 #### Steps for installation
-- Clone this repo.
+- Clone this repo .
 - Export AWS credentials as bash variables (e.g. `ap-northeast-1` for Tokyo and `ap-southeast-1` for Singapore region):
 ```
 export AWS_ACCESS_KEY_ID="anaccesskey" 
 export AWS_SECRET_ACCESS_KEY="asecretkey"
 export AWS_DEFAULT_REGION="ap-northeast-1"
 ```
-- Run `./configure.sh` script to decide on which modules to deploy.
 - `cp terraform.dummy terraform.tfvars`
 - Import variables if using IaC-Manager 
 `cat $HOME/terraform.out >> terraform.tfvars`. 
@@ -29,19 +25,12 @@ export AWS_DEFAULT_REGION="ap-northeast-1"
 - Modify the tag or branch in source property of each module in `main.tf` file.   
 `source = "github.com/microservices-today/IaC-dcos?ref=v1.0.2"` 
 `source = "github.com/microservices-today/IaC-dcos?ref=master"` 
-- Modify params in `variable.tf` to change subnet or add AMI accordingly to your aws region.
+- Modify params in `variable.tf` to change subnet or add AMI accordingly to your aws region
+- Run `terraform get` to import the modules.
 - Run `terraform plan` to see the plan to execute.
 - Run `terraform apply` to run the scripts.
 - You may have `prod/dev/stage` configurations in
 `terraform.tfvars.{prod/dev/stage}` files (already ignored by `.gitignore`).
-
-##### Steps to import a new module
-- Create a folder with module-name in `modules` directory and add the following files within that folder.
-  - `module-name.tf`            : File to create and manage module.
-  - `module-name.dummy`          : The dummy values for the module.
-  - `module-name-variables.tf`  : Variables required for the module.
-
-- Add `module-name` to module array of `configure.sh` file.
 
 #### Parameters
 
