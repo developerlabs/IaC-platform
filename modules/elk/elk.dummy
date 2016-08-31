@@ -1,0 +1,5 @@
+/**
+ * IaC: elk
+ */
+elasticsearch_domain_name = "Dummy"     /* give a name, Valid characters are a-z (lowercase only), 0-9, and - (hyphen). */
+elastic_instance_type = "m3.large.elasticsearch"
