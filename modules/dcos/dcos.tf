@@ -49,4 +49,6 @@ module "dcos" {
   dcos_master_count = "${var.dcos_master_count}"
 
   s3_bucket_name = "${var.s3_bucket_name}"
+  filebeat_docker_image = "${var.filebeat_docker_image}"
+  dcos_edition = "${var.dcos_edition}"
 }
