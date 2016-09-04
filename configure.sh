@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-#!/usr/bin/env bash
-
 modules=( "docker-private-registry" "api-gateway" "elk" "marathon-snapshot" "ecr")
 
 cat ./modules/dcos/dcos.tf > ./main.tf
