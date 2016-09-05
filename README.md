@@ -1,17 +1,21 @@
 ### IaC: Wrapper
 Script to setup a DC/OS cluster and other applications
- - DC/OS cluster
- - Docker private registry
- - API gateway
- - ELK
- - Marathon Snapshot
- - EC2 Container Registry
+ - [DC/OS cluster](https://github.com/microservices-today/IaC-dcos)
+ - [Docker private registry](https://github.com/microservices-today/IaC-dcos-docker-registry)
+ - [API gateway](https://github.com/microservices-today/IaC-api-gateway)
+ - [ELK](https://github.com/microservices-today/IaC-elk)
+ - [Marathon Snapshot](https://github.com/microservices-today/IaC-marathon-snapshots)
+ - [EC2 Container Registry](https://github.com/microservices-today/IaC-ecr)
  
 
 #### Pre-requisites
+##### With IaC-Manager
+- Use [IaC-manager](https://github.com/microservices-today/IaC-manager) to create a manager node. Then SSH into the manager node and perform the steps for installation.  
+
+##### Manual
 - An IAM account with administrator privileges.
 - Install [terraform](https://www.terraform.io/intro/getting-started/install.html) in your machine.
-- AWS CLI
+- Install AWS CLI.
 
 #### Steps for installation
 - Clone this repo .
@@ -20,8 +24,9 @@ Script to setup a DC/OS cluster and other applications
 export AWS_ACCESS_KEY_ID="anaccesskey" 
 export AWS_SECRET_ACCESS_KEY="asecretkey"
 export AWS_DEFAULT_REGION="ap-northeast-1"
-```
-- Run `./configure.sh` to decide which modules to deploy.
+```  
+Need not export the `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` in case you are using the IaC-manager. 
+- Run `./configure.sh` to decide which modules to deploy. 
 - `cp terraform.dummy terraform.tfvars`
 - Import variables if using IaC-Manager 
 `cat $HOME/terraform.out >> terraform.tfvars`. 
