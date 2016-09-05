@@ -1,5 +1,5 @@
 module "api-gateway" {
-  source = "github.com/microservices-today/IaC-api-gateway?ref=master"
+  source = "github.com/microservices-today/IaC-api-gateway?ref=v1.0.5"
 
   vpc_id = "${var.vpc_id}"
   vpc_cidr = "${var.vpc_cidr}"

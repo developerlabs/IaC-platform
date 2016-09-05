@@ -1,5 +1,5 @@
 module "docker-registry" {
-  source = "github.com/microservices-today/IaC-dcos-docker-registry?ref=master"
+  source = "github.com/microservices-today/IaC-dcos-docker-registry?ref=v1.0.5"
 
   bootstrap_ip = "${module.dcos.bootstrap_ip}"
   agent_ips = "${module.dcos.agent_ips}"
