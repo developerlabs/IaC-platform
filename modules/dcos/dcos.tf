@@ -1,5 +1,5 @@
 module "dcos" {
-  source = "github.com/microservices-today/IaC-dcos?ref=v1.0.5"
+  source = "github.com/microservices-today/IaC-dcos?ref=master"
 
   aws_region = "${var.aws_region}"
   vpc_id = "${var.vpc_id}"

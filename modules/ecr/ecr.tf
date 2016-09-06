@@ -1,5 +1,5 @@
 module "ecr" {
-  source = "github.com/microservices-today/IaC-ecr.git?ref=v1.0.0"
+  source = "github.com/microservices-today/IaC-ecr.git?ref=master"
   aws_region = "${var.aws_region}"
   dcos_url = "${module.dcos.dcos_url}"
   dcos_acs_token = "${module.dcos.dcos_acs_token}"
