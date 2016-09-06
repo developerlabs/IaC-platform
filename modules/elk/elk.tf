@@ -1,5 +1,5 @@
 module "elk" {
-  source = "github.com/microservices-today/IaC-elk.git?ref=v1.0.0"
+  source = "github.com/microservices-today/IaC-elk.git?ref=master"
 
   key_pair_name = "${var.key_pair_name}"
   private_security_group_id = "${module.dcos.private_security_group_id}"

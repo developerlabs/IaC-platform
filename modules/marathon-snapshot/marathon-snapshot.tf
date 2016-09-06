@@ -1,5 +1,5 @@
 module "maraton-snapshot" {
-  source = "github.com/microservices-today/IaC-marathon-snapshots.git?ref=v1.0.2"
+  source = "github.com/microservices-today/IaC-marathon-snapshots.git?ref=master"
 
   region = "${var.aws_region}"
   backup_s3_bucket_name = "${var.marathon_snapshot_backup_s3_bucket_name}"
