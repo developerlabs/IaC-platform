@@ -34,8 +34,7 @@ Need not export the `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` in case you 
 - Modify the tag or branch in source property of each module in `main.tf` file.   
 `source = "github.com/microservices-today/IaC-dcos?ref=v1.0.2"` 
 `source = "github.com/microservices-today/IaC-dcos?ref=master"` 
-- Modify params in `variable.tf` to change subnet or add AMI accordingly to your aws region
-- Run `terraform get` to import the modules.
+- Modify params in `variables.tf` to change subnet or add AMI accordingly to your aws region
 - Run `terraform plan` to see the plan to execute.
 - Run `terraform apply` to run the scripts.
 - You may have `prod/dev/stage` configurations in
