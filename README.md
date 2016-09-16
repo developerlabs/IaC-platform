@@ -7,10 +7,10 @@ Script to setup a DC/OS cluster and other applications
  - [Marathon Snapshot](https://github.com/microservices-today/IaC-marathon-snapshots)
  - [EC2 Container Registry](https://github.com/microservices-today/IaC-ecr)
  
-
 #### Pre-requisites
 ##### With IaC-Manager
-- Use [IaC-manager](https://github.com/microservices-today/IaC-manager) to create a manager node. Then SSH into the manager node and perform the steps for installation.  
+- Use [IaC-manager](https://github.com/microservices-today/IaC-manager) to create a manager node. Then SSH into the manager node and perform the steps for installation.
+- "Accept Software Terms" of aws marketplace for [CentOS](https://aws.amazon.com/marketplace/search/results?searchTerms=centos&page=1&ref_=nav_search_box) or [CoreOS](https://aws.amazon.com/marketplace/search/results?searchTerms=coreos&page=1&ref_=nav_search_box).
 
 ##### Manual
 - An IAM account with administrator privileges.
