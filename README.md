@@ -29,7 +29,7 @@ Need not export the `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` in case you 
 - `cd IaC-wrapper`
 - Run `./configure.sh` to decide which modules to deploy. 
 - Import variables if using IaC-Manager  
-`cp $HOME/terraform.out >> terraform.tfvars`. 
+`cp $HOME/terraform.out terraform.tfvars`. 
 - `cat terraform.dummy >> terraform.tfvars`
 - Modify params in `terraform.tfvars` for the required packages
 - Modify the tag or branch in source property of each module in `main.tf` file.   
