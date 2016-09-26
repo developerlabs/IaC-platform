@@ -5,6 +5,7 @@ module "dcos" {
   vpc_id = "${var.vpc_id}"
   private_subnet_cidr = "${var.private_subnet_cidr}"
   public_subnet_id = "${var.public_subnet_id}"
+  public_route_table_id = "${var.public_route_table_id}"
   public_security_group_id = "${var.public_security_group_id}"
 
   key_pair_name = "${var.key_pair_name}"

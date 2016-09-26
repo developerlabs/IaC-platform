@@ -29,6 +29,9 @@ variable "public_subnet_id" {
 variable "public_security_group_id" {
   description = "Public security group ID"
 }
+variable "public_route_table_id" {
+  description = "Public route table ID"
+}
 variable "pre_tag" {
   description = "Pre-phrase for tags"
   default = "Microservice"
