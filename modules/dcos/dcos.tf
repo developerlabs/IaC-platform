@@ -45,6 +45,7 @@ module "dcos" {
 
   dcos_installer_url = "${var.dcos_installer_url}"
   dcos_cluster_name = "${var.dcos_cluster_name}"
+  dcos_timezone = "${var.dcos_timezone}"
   dcos_username = "${var.dcos_username}"
   dcos_password = "${var.dcos_password}"
   dcos_master_count = "${var.dcos_master_count}"
