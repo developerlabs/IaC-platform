@@ -1,0 +1,5 @@
+/* OpenVPN Configuration */
+
+openvpn_admin_user = "openvpn"
+openvpn_admin_pw = "openvpn"
+openvpn_dns_record_name = "Dummy" /* eg: dcos-app, then record name would be dcos-app.dummy.com */
