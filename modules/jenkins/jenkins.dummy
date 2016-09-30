@@ -1,0 +1,2 @@
+/* S3 path of the folder containing jenkins jobs */
+jenkins_jobs_s3_path = "bucket_name/folder_name/sub_folder_containing_jenkins_jobs"
