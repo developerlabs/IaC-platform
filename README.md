@@ -6,6 +6,7 @@ Script to setup a DC/OS cluster and other applications
  - [ELK](https://github.com/microservices-today/IaC-elk)
  - [Marathon Snapshot](https://github.com/microservices-today/IaC-marathon-snapshots)
  - [EC2 Container Registry](https://github.com/microservices-today/IaC-ecr)
+ - [OpenVPN Server](https://github.com/microservices-today/IaC-openvpn)
  
 #### Pre-requisites
 ##### With IaC-Manager
