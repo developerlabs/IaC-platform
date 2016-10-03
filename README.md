@@ -47,6 +47,7 @@ Need not export the `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` in case you 
   - `module-name.tf`             : File to create and manage module.
   - `module-name.dummy`          : Dummy values for the module.
   - `module-name-variables.tf`   : Variables required for the module.
+  - `module-name-output.tf`      : Outputs to be displayed after execution.
 
 - Add `module-name` to module array in `configure.sh`.
 

@@ -14,6 +14,7 @@ fi
 cat ./modules/dcos/dcos.tf | sed "s/ref=master/ref="$VERSION/ > ./main.tf
 cat ./modules/dcos/dcos.dummy > ./terraform.dummy
 cat ./modules/dcos/dcos-variables.tf > ./variables.tf
+cat ./modules/dcos/dcos-output.tf > ./outputs.tf
 
 for module in "${modules[@]}"
 do
@@ -24,6 +25,7 @@ do
    cat ./modules/$module/$module.tf | sed "s/ref=master/ref="$VERSION/ >> ./main.tf
    cat ./modules/$module/$module.dummy >> ./terraform.dummy
    cat ./modules/$module/$module-variables.tf >> ./variables.tf
+   cat ./modules/$module/$module-output.tf >> ./outputs.tf
    fi
 done
 
