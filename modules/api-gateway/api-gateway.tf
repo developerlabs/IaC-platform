@@ -4,7 +4,7 @@ module "api-gateway" {
   vpc_id = "${var.vpc_id}"
   vpc_cidr = "${var.vpc_cidr}"
 
-  private_subnet_id = "${module.dcos.private_subnet_id}"
+  private_subnet_id = "${module.dcos.private_primary_subnet_id}"
   private_subnet_az = "${module.dcos.private_subnet_availability_zone}"
 
   public_agent_ids = "${module.dcos.public_agent_ids}"
