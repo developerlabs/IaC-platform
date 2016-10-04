@@ -13,4 +13,5 @@ module "maraton-snapshot" {
   dcos_env = "${var.marathon_snapshot_dcos_env}"
   private_security_group_id = "${module.dcos.private_security_group_id}"
   private_primary_subnet_id = "${module.dcos.private_primary_subnet_id}"
+  private_secondary_subnet_id = "${module.dcos.private_secondary_subnet_id}"
 }
