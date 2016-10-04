@@ -18,6 +18,6 @@ module "openvpn" {
   openvpn_dns_record_name = "${var.openvpn_dns_record_name}"
   openvpn_amis = "${var.openvpn_amis}"
 
-  openvpn_admin_user = "${var.openvpn_admin_pw}"
+  openvpn_admin_user = "${var.openvpn_admin_user}"
   openvpn_admin_pw = "${var.openvpn_admin_pw}"
 }
