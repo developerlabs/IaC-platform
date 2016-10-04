@@ -3,7 +3,7 @@ module "elk" {
 
   key_pair_name = "${var.key_pair_name}"
   private_security_group_id = "${module.dcos.private_security_group_id}"
-  private_subnet_id = "${module.dcos.private_subnet_id}"
+  private_subnet_id = "${module.dcos.private_primary_subnet_id}"
   pre_tag = "${var.pre_tag}"
   post_tag = "${var.post_tag}"
   nat_gateway_public_ip = "${module.dcos.nat_gateway_public_ip}"
