@@ -53,3 +53,9 @@ terraform.tfvars*
 
 # Terraform module files
 .terraform
+
+# Generated files
+main.tf
+outputs.tf
+terraform.dummy
+variables.tf
