@@ -3,9 +3,6 @@ module "dcos" {
 
   aws_region = "${var.aws_region}"
   vpc_id = "${var.vpc_id}"
-  public_subnet_id = "${var.public_subnet_id}"
-  public_route_table_id = "${var.public_route_table_id}"
-  public_security_group_id = "${var.public_security_group_id}"
 
   key_pair_name = "${var.key_pair_name}"
   instance_type = "${var.instance_type}"
@@ -24,6 +21,7 @@ module "dcos" {
 
   nfs_access_address = "${var.nfs_access_address}"
   aws_ssl_certificate_arn_id = "${var.aws_ssl_certificate_arn_id}"
+  internet_gateway_id = "${var.internet_gateway_id}"
 
   agent_asg_min_size = "${var.agent_asg_min_size}"
   agent_asg_desired_capacity = "${var.agent_asg_desired_capacity}"

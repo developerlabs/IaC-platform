@@ -23,15 +23,6 @@ variable "vpc_id" {
 variable "vpc_cidr" {
   description = "VPC CIDR block"
 }
-variable "public_subnet_id" {
-  description = "Public subnet ID"
-}
-variable "public_security_group_id" {
-  description = "Public security group ID"
-}
-variable "public_route_table_id" {
-  description = "Public route table ID"
-}
 variable "pre_tag" {
   description = "Pre-phrase for tags"
   default = "Microservice"
@@ -113,13 +104,32 @@ variable "instance_type" {
     "agent" = "m3.xlarge"
   }
 }
-variable "private_subnet_cidr" {
+
+variable "public_primary_subnet_cidr" {
   description = "CIDR for the Private Subnet"
   default = "10.0.1.0/24"
+}
+
+variable "public_secondary_subnet_cidr" {
+  description = "CIDR for the Private Subnet"
+  default = "10.0.2.0/24"
+}
+
+variable "private_primary_subnet_cidr" {
+  description = "CIDR for the Private Subnet"
+  default = "10.0.3.0/24"
+}
+
+variable "private_secondary_subnet_cidr" {
+  description = "CIDR for the Private Subnet"
+  default = "10.0.4.0/24"
 }
 variable "nfs_access_address" {
   description = "NFS server access address"
   default = "10.0.1.0/16"
+}
+variable "internet_gateway_id" {
+  description = "Internet Gateway ID"
 }
 
 variable "agent_asg_max_size" {

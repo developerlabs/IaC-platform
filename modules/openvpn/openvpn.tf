@@ -4,7 +4,7 @@ module "openvpn" {
   aws_region = "${var.aws_region}"
   vpc_id = "${var.vpc_id}"
   vpc_cidr = "${var.vpc_cidr}"
-  public_subnet_id = "${var.public_subnet_id}"
+  management_subnet_id = "${var.management_subnet_id}"
   key_pair_name = "${var.key_pair_name}"
 
   pre_tag = "${var.pre_tag}"
