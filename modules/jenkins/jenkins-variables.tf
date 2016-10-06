@@ -13,3 +13,6 @@ variable "jenkins_host_volume" {
 variable "jenkins_jobs_s3_path" {
   description = "S3 path of the folder containing jenkins jobs (Eg: bucket_name/folder_name/sub_folder_containing_jenkins_jobs)"
 }
+variable "jenkins_backup_s3_path" {
+  description = "S3 path of the folder containing jenkins jobs (Eg: bucket_name/folder_name/sub_folder_containing_jenkins_jobs)"
+}
