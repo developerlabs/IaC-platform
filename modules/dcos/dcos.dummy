@@ -26,7 +26,7 @@ tyk_dns_record_name = "Dummy"
  * DC/OS
  */
 dcos_cluster_name = "Dummy-Prod"
-dcos_edition  = "enterprise"    /* enterprise, community */
+dcos_edition  = "community"    /* enterprise, community */
 dcos_username = "dummy"     /* skip for community edition */
 dcos_password = "dummy"     /* skip for community edition */
 /** Dev example
