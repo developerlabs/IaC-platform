@@ -6,6 +6,8 @@ module "jenkins" {
   host_volume = "${var.jenkins_host_volume}"
 
   jenkins_jobs_s3_path = "${var.jenkins_jobs_s3_path}"
+
+  restore_jenkins = "${var.restore_jenkins}"
   jenkins_backup_s3_path = "${var.jenkins_backup_s3_path}"
 
   dcos_url = "${module.dcos.dcos_url}"
