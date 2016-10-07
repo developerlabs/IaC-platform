@@ -89,11 +89,11 @@ variable "master_user_data" {
 
 variable "dcos_master_disk_size" {
   description = "The size of Master node root block device disk in GB"
-  default = "30"
+  default = "256"
 }
 variable "dcos_agent_disk_size" {
   description = "The size of Agent node root block device disk in GB"
-  default = "30"
+  default = "256"
 }
 variable "instance_type" {
   description = "DCOS instance type"
