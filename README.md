@@ -26,7 +26,7 @@ export AWS_ACCESS_KEY_ID="anaccesskey"
 export AWS_SECRET_ACCESS_KEY="asecretkey"
 export AWS_DEFAULT_REGION="ap-northeast-1"
 ```  
-Need not export the `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` in case you are using the IaC-manager. 
+If you are using IaC-manager, please, ignore `AWS_ACCESS_KEY_ID` & `AWS_SECRET_ACCESS_KEY`. 
 - `cd IaC-wrapper`
 - Run `./configure.sh` to decide which modules to deploy. 
 - `cp terraform.dummy terraform.tfvars`
