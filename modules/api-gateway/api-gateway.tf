@@ -15,26 +15,10 @@ module "api-gateway" {
   tag_environment = "${var.tag_service}"
   tag_version = "${var.tag_version}"
 
-  redis_engine_version = "${var.redis_engine_version}"
-  redis_cluster_name = "${var.redis_cluster_name}"
-  redis_node_type = "${var.redis_node_type}"
-  redis_port = "${var.redis_port}"
-  redis_parameter_group_name = "${var.redis_parameter_group_name}"
-
   dcos_url = "${module.dcos.dcos_url}"
   dcos_acs_token = "${module.dcos.dcos_acs_token}"
 
-  marathon_lb = "${var.marathon_lb_config}"
-
-  autoscale_config = "${var.autoscale_config}"
-  autoscale_haproxy = "${var.autoscale_haproxy}"
-  autoscale_rps = "${var.autoscale_rps}"
-  autoscale_samples = "${var.autoscale_samples}"
-  autoscale_threshold_instances = "${var.autoscale_threshold_instances}"
-
-  tyk_config = "${var.tyk_config}"
   tyk_api_key = "${var.tyk_api_key}"
   tyk_rpc_credentials = "${var.tyk_rpc_credentials}"
-  tyk_listen_port = "${var.tyk_listen_port}"
   tyk_secret = "${var.tyk_secret}"
 }

@@ -9,7 +9,9 @@ Script to setup a DC/OS cluster and other applications
  - [Marathon Snapshot](https://github.com/microservices-today/IaC-marathon-snapshots)
  - [EC2 Container Registry](https://github.com/microservices-today/IaC-ecr)
  - [OpenVPN Server](https://github.com/microservices-today/IaC-openvpn)
- 
+ - [Jenkins](https://github.com/microservices-today/IaC-dcos-cicd)
+ - [Docker Cleanup](https://github.com/microservices-today/IaC-docker-cleanup)
+
 #### Pre-requisites
 ##### With IaC-Manager
 - Use [IaC-manager](https://github.com/microservices-today/IaC-manager) to create a manager node. 
@@ -20,8 +22,8 @@ Then SSH into the manager node and perform the steps for installation.
 
 ##### Manual
 - An IAM account with administrator privileges.
-- Install [terraform](https://www.terraform.io/intro/getting-started/install.html) in your machine.
-- Install AWS CLI.
+- [Terraform](https://www.terraform.io/intro/getting-started/install.html)
+- AWS CLI
 
 #### Steps for installation
 - Clone this repo .
@@ -31,16 +33,10 @@ export AWS_ACCESS_KEY_ID="anaccesskey"
 export AWS_SECRET_ACCESS_KEY="asecretkey"
 export AWS_DEFAULT_REGION="ap-northeast-1"
 ```  
-If you are using IaC-manager, please, ignore `AWS_ACCESS_KEY_ID` & `AWS_SECRET_ACCESS_KEY`. 
+If you are using IaC-manager, ignore `AWS_ACCESS_KEY_ID` & `AWS_SECRET_ACCESS_KEY`. 
 - `cd IaC-wrapper`
 - Run `./configure.sh` to decide which modules to deploy. 
-- `cp terraform.dummy terraform.tfvars`
-- Import variables if using IaC-Manager  
-`cat $HOME/terraform.out >> terraform.tfvars`
-- Modify params in `terraform.tfvars` for the required packages
-- Modify the tag or branch in source property of each module in `main.tf` file.   
-`source = "github.com/microservices-today/IaC-dcos?ref=v1.0.2"` 
-`source = "github.com/microservices-today/IaC-dcos?ref=master"` 
+- Modify params in `terraform.tfvars`.
 - Modify params in `variables.tf` to change subnet or add AMI accordingly to your aws region
 - Run `terraform plan` to see the plan to execute.
 - Run `terraform apply` to run the scripts.
@@ -109,6 +105,11 @@ By installing [Iac-Elk][iac-elk] you will be able to monitor the logs through aw
 - SSH into the manager node and check whether `terraform.out` in `home/centos` contains:    
 a record of the VPC, Subnet, Security Group and Nat gateway ID.
 - More details on [terraform-docs](https://github.com/segmentio/terraform-docs).
+- If unable to perform `terraform destroy`, instance profile can be removed using aws cli only.
+  `aws iam list-instance-profiles | grep InstanceProfileName`
+  `aws iam delete-instance-profile --instance-profile-name ${var.pre_tag}_s3_profile_master_${var.post_tag}`
+  `aws iam delete-instance-profile --instance-profile-name ${var.pre_tag}_s3_profile_agents_${var.post_tag}`
+  `aws iam delete-instance-profile --instance-profile-name ${var.pre_tag}_s3_profile_public_agent_${var.post_tag}`
 
 [filebeat-docker]: <https://github.com/microservices-today/filebeat-docker>
 [iac-elk]: <https://github.com/microservices-today/IaC-elk>

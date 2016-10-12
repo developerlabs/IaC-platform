@@ -11,8 +11,12 @@ read VERSION
 if [[ -z "$VERSION" ]]; then
     VERSION=master
 fi
+
+touch main.tf terraform.tfvars variables.tf outputs.tf
+cp terraform.tfvars terraform.tfvars.bkp
+
 cat ./modules/dcos/dcos.tf | sed "s/ref=master/ref="$VERSION/ > ./main.tf
-cat ./modules/dcos/dcos.dummy > ./terraform.dummy
+cat ./modules/dcos/dcos.dummy > ./terraform.tfvars && echo -e '\n\n' >> ./terraform.tfvars
 cat ./modules/dcos/dcos-variables.tf > ./variables.tf
 cat ./modules/dcos/dcos-output.tf > ./outputs.tf
 
@@ -23,10 +27,11 @@ do
    if [ ${ANS} == 'yes' ]
    then
    cat ./modules/$module/$module.tf | sed "s/ref=master/ref="$VERSION/ >> ./main.tf
-   cat ./modules/$module/$module.dummy >> ./terraform.dummy
+   cat ./modules/$module/$module.dummy >> ./terraform.tfvars && echo -e '\n\n' >> ./terraform.tfvars
    cat ./modules/$module/$module-variables.tf >> ./variables.tf
    cat ./modules/$module/$module-output.tf >> ./outputs.tf
    fi
 done
 
 terraform get -update
+cat $HOME/terraform.out >> terraform.tfvars

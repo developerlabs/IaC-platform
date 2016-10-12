@@ -1,5 +1,6 @@
-/* OpenVPN Configuration */
-
-openvpn_admin_user = "openvpn"
-openvpn_admin_pw = "openvpn"
-openvpn_dns_record_name = "Dummy" /* eg: dcos-app, then record name would be dcos-app.dummy.com */
+/**
+ * IaC: OpenVPN
+ */
+openvpn_admin_user = "openvpn"                  // OpenVPN Admin username
+openvpn_admin_pw = "openvpn"                    // OpenVPN Admin password
+openvpn_dns_record_name = "dummy"               // Eg: openvpn, then record name would be openvpn.dummy.com

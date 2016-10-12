@@ -1,40 +1,25 @@
-/* AWS */
-/* Skip the following block of variables(11) if you are using IaC-manager
- * as it will be copied form `terraform.out` while running
- * `cat ~/terraform.out >> ~/IaC-dcos/terraform.tfvars` command
+/**
+ * AWS Configuration
  */
-pre_tag = "Testing"			/* Pre-tag to be attached to AWS resources for identification */
-post_tag = "Terra"			/* Post-tag to be attached to AWS resources for identification */
-tag_service = "DCOS 1.73"		/* Specify the service */
-tag_environment = "Staging"		/* Specify the environment */
-tag_version = "1.02"			/* Specify the version */
 
-aws_region     = "ap-northeast-1"  	/* ap-northeast-1 for Tokyo, ap-southeast-1 for SG */
-vpc_id = "dummy"    /* ID of VPC created for hosting DC/OS */
-key_pair_name = "dummy"   /* key_pair_name should be exactly as it is in your AWS */
+/* EC2 */
+aws_ssl_certificate_arn_id = "Dummy"          // ARN of the SSL certificate created by AWS Certificate Manager
 
-s3_bucket_name = "dummy"
-aws_ssl_certificate_arn_id = "Dummy"
+/* Route 53 */
+domain_name = "dummy.com"                     // Your domain name
+hosted_zone_id = "DUMMY"                      // ID of the Hosted Zone for above domain within Route53
+master_dns_record_name = "dummy"              // Eg: dcos, then record name would be dcos.dummy.com
+tyk_dns_record_name = "dummy"                 // Eg: tyk, then record name would be tyk.dummy.com
+jenkins_dns_record_name = "dummy"             // Eg: jenkins, then record name would be jenkins.dummy.com
 
-/* Hosted Zone Configuration */
-hosted_zone_id = "DUMMY"
-domain_name = "dummy.com"
-master_dns_record_name = "Dummy"                     /* eg: dcos-test, then record name would be dcos-test.dummy.com */
-tyk_dns_record_name = "Dummy"
 
 /**
  * DC/OS
  */
 dcos_cluster_name = "Dummy-Prod"
-dcos_edition  = "community"    /* enterprise, community */
-dcos_username = "dummy"     /* skip for community edition */
-dcos_password = "dummy"     /* skip for community edition */
-/** Dev example
- * dcos_master_count = "1"
- * agent_asg_desired_capacity = "1"
- * public_agent_asg_desired_capacity = "1"
- * dcos_installer_url = { DCOS_EDITION = "--url--" }   // DCOS_EDITION can be enterprise or community
- * dcos_timezone = "Asia/Tokyo"  // e.g. UTC or Asia/Singapore
- */
+dcos_master_count = "3"
+agent_asg_desired_capacity = "3"
+public_agent_asg_desired_capacity = "3"
+dcos_timezone = "Asia/Tokyo"                  // e.g. UTC or Asia/Singapore
 
-sysdig_access_key = "dymmy"  /* access key from sysdig cloud account */
+sysdig_access_key = "dummy"                   // Sysdig cloud Access key (https://sysdig.com)

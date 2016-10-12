@@ -1,7 +1,7 @@
 /**
- * IaC: API Gateway
+ * IaC: Tyk API Gateway
  */
-redis_cluster_name = "Dummy"
-tyk_api_key = "Dummy"
-tyk_rpc_credentials = "Dummy"
-tyk_secret = "Dummy"
+tyk_api_key = "Dummy"                   // Tyk Dashboard API Access Credentials in the Users section of Dashboard
+tyk_rpc_credentials = "Dummy"           // RPC Credentials in the Users section of Dashboard
+tyk_secret = "Dummy"                    // Tyk secret that we define so to interact with our Tyk node programatically
+
