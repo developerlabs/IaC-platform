@@ -194,3 +194,6 @@ variable "dcos_edition" {
   description = "DCOS edition type, enterprise/community"
   default = "enterprise"
 }
+variable "sysdig_access_key" {
+  description = "Sysdig access key"
+}

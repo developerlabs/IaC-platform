@@ -1,0 +1,67 @@
+/* AWS */
+/* Skip the following block of variables(11) if you are using IaC-manager
+ * as it will be copied form `terraform.out` while running
+ * `cat ~/terraform.out >> ~/IaC-dcos/terraform.tfvars` command
+ */
+pre_tag = "Testing"			/* Pre-tag to be attached to AWS resources for identification */
+post_tag = "Terra"			/* Post-tag to be attached to AWS resources for identification */
+tag_service = "DCOS 1.73"		/* Specify the service */
+tag_environment = "Staging"		/* Specify the environment */
+tag_version = "1.02"			/* Specify the version */
+aws_region     = "ap-northeast-1"  	/* ap-northeast-1 for Tokyo, ap-southeast-1 for SG */
+vpc_id = "dummy"    /* ID of VPC created for hosting DC/OS */
+public_subnet_id = "dummy" /* ID of public subnet created within VPC */
+public_security_group_id = "dummy" /* ID of public security group */
+key_pair_name = "dummy"   /* key_pair_name should be exactly as it is in your AWS */
+public_route_table_id = "dummy"
+
+s3_bucket_name = "dummy"
+aws_ssl_certificate_arn_id = "Dummy"
+
+/* Hosted Zone Configuration */
+hosted_zone_id = "DUMMY"
+domain_name = "dummy.com"
+master_dns_record_name = "Dummy"                     /* eg: dcos-test, then record name would be dcos-test.dummy.com */
+tyk_dns_record_name = "Dummy"
+
+/**
+ * DC/OS
+ */
+dcos_cluster_name = "Dummy-Prod"
+dcos_edition  = "enterprise"    /* enterprise, community */
+dcos_username = "dummy"     /* skip for community edition */
+dcos_password = "dummy"     /* skip for community edition */
+sysdig_access_key = "dymmy"  /* access key from sysdig cloud account */
+/** Dev example
+ * dcos_master_count = "1"
+ * agent_asg_desired_capacity = "1"
+ * public_agent_asg_desired_capacity = "1"
+ * dcos_installer_url = { DCOS_EDITION = "--url--" }   // DCOS_EDITION can be enterprise or community
+ * dcos_timezone = "Asia/Tokyo"  // e.g. UTC or Asia/Singapore
+ */
+/**
+ * IaC: API Gateway
+ */
+redis_cluster_name = "Dummy"
+tyk_api_key = "Dummy"
+tyk_rpc_credentials = "Dummy"
+tyk_secret = "Dummy"
+/**
+ * IaC: elk
+ */
+elasticsearch_domain_name = "Dummy"     /* give a name, Valid characters are a-z (lowercase only), 0-9, and - (hyphen). */
+elastic_instance_type = "m3.large.elasticsearch"
+/**
+ * IaC: marathon-snapshot
+ */
+marathon_snapshot_dcos_env = "Dummy"
+marathon_snapshot_backup_s3_bucket_name = "Dummy"
+/* S3 path of the folder containing jenkins jobs */
+/* Leave jenkins_jobs_s3_path value as empty string if no jobs to restore(jenkins_jobs_s3_path = "")  */
+jenkins_jobs_s3_path = "bucket_name/folder_name/sub_folder_containing_jenkins_jobs"
+jenkins_backup_s3_path = "bucket_name/folder_name/sub_folder_containing_jenkins_jobs"
+/* OpenVPN Configuration */
+
+openvpn_admin_user = "openvpn"
+openvpn_admin_pw = "openvpn"
+openvpn_dns_record_name = "Dummy" /* eg: dcos-app, then record name would be dcos-app.dummy.com */
