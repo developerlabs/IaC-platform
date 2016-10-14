@@ -50,4 +50,5 @@ module "dcos" {
   s3_bucket_name = "${var.s3_bucket_name}"
   filebeat_docker_image = "${var.filebeat_docker_image}"
   dcos_edition = "${var.dcos_edition}"
+  sysdig_access_key = "${var.sysdig_access_key}"
 }

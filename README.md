@@ -51,6 +51,11 @@ If you are using IaC-manager, please, ignore `AWS_ACCESS_KEY_ID` & `AWS_SECRET_A
 
 - Add `module-name` to module array in `configure.sh`.
 
+#### Monitoring
+- [Sysdig](http://www.sysdig.org/) containers will be running in all dcos nodes for proper monitoring of instances through sysdig cloud.
+- [Filebeat-Docker][filebeat-docker] containers will be running in all dcos nodes for dcos and marathon log capturing. By installing [Iac-Elk][iac-elk]
+you will be able to monitor the logs through aws elasticsearch service.
+
 #### Parameters
 
 ##### Inputs
@@ -98,3 +103,6 @@ If you are using IaC-manager, please, ignore `AWS_ACCESS_KEY_ID` & `AWS_SECRET_A
 - SSH into the manager node and check whether `terraform.out` in `home/centos` contains:    
 a record of the VPC, Subnet, Security Group and Nat gateway ID.
 - More details on [terraform-docs](https://github.com/segmentio/terraform-docs).
+
+[filebeat-docker]: <https://github.com/microservices-today/filebeat-docker>
+[iac-elk]: <https://github.com/microservices-today/IaC-elk>
