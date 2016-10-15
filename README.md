@@ -1,4 +1,4 @@
-### IaC: Wrapper
+### IaC: Next Generation Platform
 Script to setup a DC/OS cluster and other applications
  - [DC/OS cluster](https://github.com/microservices-today/IaC-dcos)
  - [Docker private registry](https://github.com/microservices-today/IaC-dcos-docker-registry)
@@ -10,8 +10,11 @@ Script to setup a DC/OS cluster and other applications
  
 #### Pre-requisites
 ##### With IaC-Manager
-- Use [IaC-manager](https://github.com/microservices-today/IaC-manager) to create a manager node. Then SSH into the manager node and perform the steps for installation.
-- "Accept Software Terms" of aws marketplace for [CentOS](https://aws.amazon.com/marketplace/search/results?searchTerms=centos&page=1&ref_=nav_search_box) or [CoreOS](https://aws.amazon.com/marketplace/search/results?searchTerms=coreos&page=1&ref_=nav_search_box).
+- Use [IaC-manager](https://github.com/microservices-today/IaC-manager) to create a manager node. 
+Then SSH into the manager node and perform the steps for installation.
+- "Accept Software Terms" of aws marketplace for 
+[CentOS](https://aws.amazon.com/marketplace/search/results?searchTerms=centos&page=1&ref_=nav_search_box) or 
+[CoreOS](https://aws.amazon.com/marketplace/search/results?searchTerms=coreos&page=1&ref_=nav_search_box).
 
 ##### Manual
 - An IAM account with administrator privileges.
@@ -52,9 +55,10 @@ If you are using IaC-manager, please, ignore `AWS_ACCESS_KEY_ID` & `AWS_SECRET_A
 - Add `module-name` to module array in `configure.sh`.
 
 #### Monitoring
-- [Sysdig](http://www.sysdig.org/) containers will be running in all dcos nodes for proper monitoring of instances through sysdig cloud.
-- [Filebeat-Docker][filebeat-docker] containers will be running in all dcos nodes for dcos and marathon log capturing. By installing [Iac-Elk][iac-elk]
-you will be able to monitor the logs through aws elasticsearch service.
+- [Sysdig](http://www.sysdig.org/) containers will be running in all dcos nodes for proper monitoring of instances 
+through sysdig cloud.
+- [Filebeat-Docker][filebeat-docker] containers will be running in all dcos nodes for dcos and marathon log capturing. 
+By installing [Iac-Elk][iac-elk] you will be able to monitor the logs through aws elasticsearch service.
 
 #### Parameters
 
