@@ -1,6 +1,7 @@
 ### IaC: Next Generation Platform
 
-![architecture]:(https://github.com/microservices-today/IaC-wrapper/doc/architecture.png)
+![Architecture of Next Generation Platform](/doc/architecture.png)
+
 Script to setup a DC/OS cluster and other applications
  - [DC/OS cluster](https://github.com/microservices-today/IaC-dcos)
  - [Docker private registry](https://github.com/microservices-today/IaC-dcos-docker-registry)
