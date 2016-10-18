@@ -12,8 +12,4 @@ module "elk" {
   tag_service = "${var.tag_service}"
   tag_environment = "${var.tag_service}"
   tag_version = "${var.tag_version}"
-  elasticsearch_domain_name = "${var.elasticsearch_domain_name}"
-  elastic_instance_type = "${var.elastic_instance_type}"
-  elastic_instance_count = "${var.elastic_instance_count}"
-  automated_snapshot_start_hour = "${var.automated_snapshot_start_hour}"
 }

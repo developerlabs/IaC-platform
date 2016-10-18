@@ -1,17 +1,15 @@
 module "maraton-snapshot" {
   source = "github.com/microservices-today/IaC-marathon-snapshots.git?ref=master"
 
-  region = "${var.aws_region}"
-  backup_s3_bucket_name = "${var.marathon_snapshot_backup_s3_bucket_name}"
-  s3_config = "${var.marathon_snapshot_s3_config}"
-
-  dcos_url = "${module.dcos.dcos_url}"
-  pre_tag = "${var.pre_tag}"
-  post_tag = "${var.post_tag}"
-  dcos_url_token = "${module.dcos.dcos_acs_token}"
-  dcos_config = "${var.marathon_snapshot_dcos_config}"
-  dcos_env = "${var.marathon_snapshot_dcos_env}"
+  aws_region = "${var.aws_region}"
   private_security_group_id = "${module.dcos.private_security_group_id}"
   private_primary_subnet_id = "${module.dcos.private_primary_subnet_id}"
   private_secondary_subnet_id = "${module.dcos.private_secondary_subnet_id}"
+  pre_tag = "${var.pre_tag}"
+  post_tag = "${var.post_tag}"
+
+  backup_s3_bucket_name = "${module.dcos.s3_bucket_name}"
+
+  dcos_url = "${module.dcos.dcos_url}"
+  dcos_acs_token = "${module.dcos.dcos_acs_token}"
 }

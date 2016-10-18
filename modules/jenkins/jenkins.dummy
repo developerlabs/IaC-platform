@@ -1,5 +1,6 @@
-/* S3 path of the folder containing jenkins jobs */
-/* Leave jenkins_jobs_s3_path value as empty string if no jobs to restore(jenkins_jobs_s3_path = "")  */
-jenkins_jobs_s3_path = "bucket_name/folder_name/sub_folder_containing_jenkins_jobs"
-restore_jenkins = "0"   // Enable restore- 1, Disable restore - 0
-jenkins_backup_s3_path = "bucket_name/folder_name/sub_folder_containing_jenkins_jobs"
+/**
+ * IaC: Jenkins
+ */
+restore_jenkins = "0"                                                                           // Restore jenkins from backup file (0 - Disable, 1 - Enable)
+jenkins_restore_s3_path = "bucket_name/folder_name/sub_folder_containing_jenkins_backup_file"   // S3 path of the folder containing entire jenkins home folder in gzip format (Eg: bucket_name/folder_name/jenkins.tar.gz). Ignored if 'restore jenkins' variable has value 0.
+jenkins_jobs_restore_s3_path = "bucket_name/folder_name/sub_folder_containing_jenkins_jobs"     // S3 path of the folder containing jenkins jobs to restore. Leave jenkins_jobs_s3_path value empty if no jobs to restore (jenkins_jobs_s3_path = "")
