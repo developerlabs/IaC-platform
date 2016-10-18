@@ -84,6 +84,9 @@ variable "dcos_edition" {
   description = "DCOS edition type, enterprise/community"
   default = "community"
 }
+variable "dcos_installer_url" {
+  description = "DCOS installer url"
+}
 variable "sysdig_access_key" {
   description = "Sysdig access key"
 }

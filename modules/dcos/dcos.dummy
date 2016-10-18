@@ -21,5 +21,8 @@ dcos_master_count = "3"
 agent_asg_desired_capacity = "3"
 public_agent_asg_desired_capacity = "3"
 dcos_timezone = "Asia/Tokyo"                  // e.g. UTC or Asia/Singapore
+dcos_installer_url = {
+    community = "https://cdn.microservices.today/1.8.4/dcos_generate_config.sh"
+}
 
 sysdig_access_key = "dummy"                   // Sysdig cloud Access key (https://sysdig.com)

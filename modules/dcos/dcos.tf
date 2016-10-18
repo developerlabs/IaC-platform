@@ -28,6 +28,7 @@ module "dcos" {
   dcos_edition = "${var.dcos_edition}"
   dcos_cluster_name = "${var.dcos_cluster_name}"
   dcos_timezone = "${var.dcos_timezone}"
+  dcos_installer_url = "${var.dcos_installer_url}"
 
   sysdig_access_key = "${var.sysdig_access_key}"
 }
