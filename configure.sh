@@ -22,9 +22,9 @@ cat ./modules/dcos/dcos-output.tf > ./outputs.tf
 
 for module in "${modules[@]}"
 do
-   echo -e "Do you want to run ${GREEN}$module${NC} ? yes/no"
+   echo -e "Do you want to run ${GREEN}$module${NC} ? y/n"
    read ANS
-   if [ ${ANS} == 'yes' ]
+   if [ ${ANS} == 'y' ]
    then
    cat ./modules/$module/$module.tf | sed "s/ref=master/ref="$VERSION/ >> ./main.tf
    cat ./modules/$module/$module.dummy >> ./terraform.tfvars && echo -e '\n\n' >> ./terraform.tfvars
