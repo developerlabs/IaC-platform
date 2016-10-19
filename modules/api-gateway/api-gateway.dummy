@@ -1,7 +1,7 @@
 /**
  * IaC: Tyk API Gateway
  */
-tyk_api_key = "Dummy"                   // Tyk Dashboard API Access Credentials in the Users section of Dashboard
-tyk_rpc_credentials = "Dummy"           // RPC Credentials in the Users section of Dashboard
-tyk_secret = "Dummy"                    // Tyk secret that we define so to interact with our Tyk node programatically
+tyk_api_key = "Dummy"                   /* Tyk Dashboard API Access Credentials in the Users section of Dashboard */
+tyk_rpc_credentials = "Dummy"           /* RPC Credentials in the Users section of Dashboard */
+tyk_secret = "Dummy"                    /* Tyk secret that we define so to interact with our Tyk node programatically */
 
