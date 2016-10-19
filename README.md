@@ -37,7 +37,8 @@ export AWS_DEFAULT_REGION="ap-northeast-1"
 If you are using IaC-manager, ignore `AWS_ACCESS_KEY_ID` & `AWS_SECRET_ACCESS_KEY`. 
 - `cd IaC-wrapper`
 - Run `./configure.sh` to decide which modules to deploy. 
-- Modify params in `terraform.tfvars`.
+- Modify params in `terraform.tfvars`.              
+See [Jenkins restoration](https://github.com/microservices-today/IaC-platform#jenkins-restoration) for setting `jenkins_restore_s3_path` parameter. 
 - Modify params in `variables.tf` to change subnet or add AMI accordingly to your aws region
 - Run `terraform plan` to see the plan to execute.
 - Run `terraform apply` to run the scripts.
@@ -101,6 +102,22 @@ By installing [Iac-Elk][iac-elk] you will be able to monitor the logs through aw
 | hostname |  |
 | port |  |
 | endpoint |  |
+
+#### Jenkins restoration
+* Take backup of Jenkins home folder, excluding below files, to S3 bucket, as a tar gzip file (Eg: jenkins.tar.gz).
+```
+config-history/*
+jobs/*/workspace*
+jobs/*/builds/*/archive
+plugins/*/*
+plugins/*.bak
+war
+cache
+```
+
+`sudo tar -cvzf jenkins.tar.gz jenkins/`
+`aws s3 cp jenkins.tar.gz s3://bucket_name/folder_name`
+* Specify the S3 bucket path to Jenkins backup file (Eg: `bucket_name/folder_name/jenkins.tar.gz`) as `jenkins_restore_s3_path` parameter value in `terraform.tfvars`.
 
 #### Notes
 - SSH into the manager node and check whether `terraform.out` in `home/centos` contains:    
