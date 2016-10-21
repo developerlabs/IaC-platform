@@ -5,3 +5,4 @@ tyk_api_key = "Dummy"                   /* Tyk Dashboard API Access Credentials 
 tyk_rpc_credentials = "Dummy"           /* RPC Credentials in the Users section of Dashboard */
 tyk_secret = "Dummy"                    /* Tyk secret that we define so to interact with our Tyk node programatically */
 
+redis_snapshot_name = ""  				/* The name of the backup snapshot taken from AWS ElastiCache */
