@@ -12,6 +12,7 @@ Script to setup a DC/OS cluster and other applications
  - [OpenVPN Server](https://github.com/microservices-today/IaC-openvpn)
  - [Jenkins](https://github.com/microservices-today/IaC-dcos-cicd)
  - [Docker Cleanup](https://github.com/microservices-today/IaC-docker-cleanup)
+ - [Elasticache](https://github.com/microservices-today/IaC-elasticache/)
 
 #### Pre-requisites
 ##### With IaC-Manager
@@ -98,10 +99,12 @@ By installing [Iac-Elk][iac-elk] you will be able to monitor the logs through aw
 
 | Name | Description |
 |------|-------------|
-| cache_security_group_id |  |
-| hostname |  |
-| port |  |
-| endpoint |  |
+| OpenVPN Connect URL |  |
+| OpenVPN Admin URL | |
+| OpenVPN Credentials | |
+| DC/OS URL | |
+| Jenkins URL | |
+| redis hostname |  |
 
 #### Jenkins restoration
 * Take backup of Jenkins home folder, excluding below files, to S3 bucket, as a tar gzip file (Eg: jenkins.tar.gz).
