@@ -11,5 +11,4 @@ module "maraton-snapshot" {
   backup_s3_bucket_name = "${module.dcos.s3_bucket_name}"
 
   dcos_url = "${module.dcos.dcos_url}"
-  dcos_acs_token = "${module.dcos.dcos_acs_token}"
 }

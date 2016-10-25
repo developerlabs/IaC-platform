@@ -16,7 +16,6 @@ module "api-gateway" {
   tag_version = "${var.tag_version}"
 
   dcos_url = "${module.dcos.dcos_url}"
-  dcos_acs_token = "${module.dcos.dcos_acs_token}"
 
   tyk_api_key = "${var.tyk_api_key}"
   tyk_rpc_credentials = "${var.tyk_rpc_credentials}"

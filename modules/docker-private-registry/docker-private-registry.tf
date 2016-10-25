@@ -14,5 +14,4 @@ module "docker-registry" {
   tag_version = "${var.tag_version}"
 
   dcos_url = "${module.dcos.dcos_url}"
-  dcos_acs_token = "${module.dcos.dcos_acs_token}"
 }
