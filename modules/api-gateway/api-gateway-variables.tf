@@ -12,8 +12,3 @@ variable "tyk_rpc_credentials" {
 variable "tyk_secret" {
   description = "Tyk secret that we define so to interact with our Tyk node programatically"
 }
-
-variable "redis_snapshot_name" {
-  description = "Redis snapshot taken in AWS"
-  default = ""
-}

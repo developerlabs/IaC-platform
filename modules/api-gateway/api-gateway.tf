@@ -21,5 +21,4 @@ module "api-gateway" {
   tyk_api_key = "${var.tyk_api_key}"
   tyk_rpc_credentials = "${var.tyk_rpc_credentials}"
   tyk_secret = "${var.tyk_secret}"
-  redis_snapshot_name = "${var.redis_snapshot_name}"
 }
