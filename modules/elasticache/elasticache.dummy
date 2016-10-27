@@ -1,4 +1,6 @@
-/* Redis */
-/*(Optional) The name of a snapshot from which to restore data into the new redis node group. Changing the snapshot_name forces a new resource
-Leave this empty if not required*/
+/**
+ * IaC: ElastiCache Redis
+ */
+/* (Optional) The name of a snapshot from which to restore data into the new redis node group. Changing the snapshot_name forces a new resource
+Leave this empty if not required */
 redis_snapshot_name = ""

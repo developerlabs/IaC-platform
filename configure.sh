@@ -27,7 +27,7 @@ do
    if [ ${ANS} == 'y' ]
    then
    cat ./modules/$module/$module.tf | sed "s/ref=master/ref="$VERSION/ >> ./main.tf
-   cat ./modules/$module/$module.dummy >> ./terraform.tfvars && echo -e '\n\n' >> ./terraform.tfvars
+   cat ./modules/$module/$module.dummy >> ./terraform.tfvars && [ ! -s ./modules/$module/$module.dummy ] || echo -e '\n\n' >> ./terraform.tfvars
    cat ./modules/$module/$module-variables.tf >> ./variables.tf
    cat ./modules/$module/$module-output.tf >> ./outputs.tf
    fi
@@ -35,3 +35,9 @@ done
 
 terraform get -update
 cat $HOME/terraform.out >> terraform.tfvars
+
+# Format terraform files
+terraform fmt
+
+# Remove blank lines from EOF
+sed -i -e :a -e '/^\n*$/{$d;N;};/\n$/ba' ./terraform.tfvars

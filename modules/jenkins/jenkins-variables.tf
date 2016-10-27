@@ -1,5 +1,5 @@
 variable "jenkins_jobs_restore_s3_path" {
-  description = "S3 path of the folder containing jenkins jobs (Eg: bucket_name/folder_name/sub_folder_containing_jenkins_jobs)"
+  description = "(Optional) S3 path of the folder containing jenkins jobs (Eg: bucket_name/folder_name/sub_folder_containing_jenkins_jobs)"
 }
 
 variable "restore_jenkins" {

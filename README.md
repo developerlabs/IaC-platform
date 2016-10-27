@@ -122,6 +122,22 @@ cache
 `aws s3 cp jenkins.tar.gz s3://bucket_name/folder_name`
 * Specify the S3 bucket path to Jenkins backup file (Eg: `bucket_name/folder_name/jenkins.tar.gz`) as `jenkins_restore_s3_path` parameter value in `terraform.tfvars`.
 
+#### Jenkins restoration
+* Take backup of Jenkins home folder, excluding below files, to S3 bucket, as a tar gzip file (Eg: jenkins.tar.gz).
+```
+config-history/*
+jobs/*/workspace*
+jobs/*/builds/*/archive
+plugins/*/*
+plugins/*.bak
+war
+cache
+```
+
+`sudo tar -cvzf jenkins.tar.gz jenkins/`
+`aws s3 cp jenkins.tar.gz s3://bucket_name/folder_name`
+* Specify the S3 bucket path to Jenkins backup file (Eg: `bucket_name/folder_name/jenkins.tar.gz`) as `jenkins_restore_s3_path` parameter value in `terraform.tfvars`.
+
 #### Notes
 - SSH into the manager node and check whether `terraform.out` in `home/centos` contains:    
 a record of the VPC, Subnet, Security Group and Nat gateway ID.

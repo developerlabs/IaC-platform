@@ -63,11 +63,12 @@ variable "dcos_cluster_name" {
 
 variable "dcos_timezone" {
   description = "DC/OS timezone"
-  default = "Asia/Tokyo"
+  default     = "Asia/Tokyo"
 }
 
 variable "master_user_data" {
   description = "Master Cloud config files"
+
   default = {
     "0" = "%s/files/user-data/nfs-master-cloud-config.yaml.tpl"
     "1" = "%s/files/user-data/master-cloud-config.yaml.tpl"
@@ -99,12 +100,12 @@ variable "jenkins_dns_record_name" {
 
 variable "filebeat_docker_image" {
   description = "Filebeat docker image form public docker registry"
-  default= "microservicestoday/filebeat"
+  default     = "microservicestoday/filebeat"
 }
 
 variable "dcos_edition" {
   description = "DCOS edition type, enterprise/community"
-  default = "community"
+  default     = "community"
 }
 
 variable "dcos_installer_url" {
