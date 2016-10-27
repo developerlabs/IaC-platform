@@ -13,3 +13,7 @@ output "OpenVPN Admin URL" {
 output "OpenVPN URL to download client config" {
   value = "https://${var.openvpn_dns_record_name}.${var.domain_name}"
 }
+
+output "OpenVPN Server IP" {
+  value = "${module.openvpn.OpenVPN_Server_IP}"
+}
