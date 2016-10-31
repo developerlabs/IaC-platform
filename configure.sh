@@ -11,7 +11,7 @@ read VERSION
 if [[ -z "$VERSION" ]]; then
     VERSION=master
 fi
-
+git checkout tags/$VERSION
 touch main.tf terraform.tfvars variables.tf outputs.tf
 cp terraform.tfvars terraform.tfvars.bkp
 
