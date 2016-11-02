@@ -110,6 +110,7 @@ variable "dcos_edition" {
 
 variable "dcos_installer_url" {
   description = "DCOS installer url"
+
   default = {
     "enterprise" = ""
     "community"  = "https://downloads.dcos.io/dcos/stable/dcos_generate_config.sh"

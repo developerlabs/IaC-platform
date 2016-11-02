@@ -37,7 +37,7 @@ terraform get -update
 cat $HOME/terraform.out >> terraform.tfvars
 
 # Format terraform files
-terraform fmt
+terraform fmt -list=false
 
 # Remove blank lines from EOF
 sed -i -e :a -e '/^\n*$/{$d;N;};/\n$/ba' ./terraform.tfvars

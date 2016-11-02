@@ -6,6 +6,6 @@ module "jenkins" {
   restore_jenkins         = "${var.restore_jenkins}"
   jenkins_restore_s3_path = "${var.jenkins_restore_s3_path}"
 
-  dcos_url       = "${module.dcos.dcos_url}"
-  agent_ips      = "${module.dcos.agent_ips}"
+  dcos_url  = "${module.dcos.dcos_url}"
+  agent_ips = "${module.dcos.agent_ips}"
 }
