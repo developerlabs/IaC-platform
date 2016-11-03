@@ -13,5 +13,5 @@ module "elk" {
   tag_environment           = "${var.tag_service}"
   tag_version               = "${var.tag_version}"
 
-  sysdig_access_key         = "${var.sysdig_access_key}"
+  sysdig_access_key = "${var.sysdig_access_key}"
 }
