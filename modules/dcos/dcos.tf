@@ -1,5 +1,5 @@
 module "dcos" {
-  source = "github.com/microservices-today/IaC-dcos?ref=master"
+  source = "github.com/imSold/IaC-dcos?ref=master"
 
   aws_region      = "${var.aws_region}"
   pre_tag         = "${var.pre_tag}"

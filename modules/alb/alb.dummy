@@ -1,0 +1,8 @@
+/**
+ * IaC: ALB
+ */
+ alb_domain = "dummy"
+ alb_health_path = "/dummy"
+ alb_health_port = "xxxx"
+ alb_name = "Dummy"
+ alb_service_port = "xxxxx"

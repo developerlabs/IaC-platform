@@ -3,7 +3,7 @@ GREEN='\033[0;32m'
 BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
-modules=("docker-private-registry" "api-gateway" "elk" "marathon-snapshot" "docker-cleanup" "ecr" "jenkins" "openvpn" "elasticache")
+modules=("docker-private-registry" "api-gateway" "elk" "marathon-snapshot" "docker-cleanup" "ecr" "jenkins" "openvpn" "elasticache" "alb")
 VERSION=master
 echo -e "\nPlease specify the preferred version of the application (Leave empty for the master version).
 You can find the latest release version here.${GREEN}https://github.com/microservices-today/IaC-wrapper/releases.${NC}"
