@@ -1,5 +1,5 @@
 module "alb" {
-  source = "github.com/imSold/IaC-ALB?ref=master"
+  source = "github.com/microservices-today/IaC-ALB?ref=master"
 
   aws_ssl_certificate_arn_id  = "${var.aws_ssl_certificate_arn_id}"
   hosted_zone_id              = "${var.hosted_zone_id}"
