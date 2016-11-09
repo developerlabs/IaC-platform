@@ -19,11 +19,8 @@ module "dcos" {
   agent_asg_desired_capacity        = "${var.agent_asg_desired_capacity}"
   public_agent_asg_desired_capacity = "${var.public_agent_asg_desired_capacity}"
 
-  hosted_zone_id          = "${var.hosted_zone_id}"
-  domain_name             = "${var.domain_name}"
-  master_dns_record_name  = "${var.master_dns_record_name}"
-  tyk_dns_record_name     = "${var.tyk_dns_record_name}"
-  jenkins_dns_record_name = "${var.jenkins_dns_record_name}"
+  hosted_zone_id = "${var.hosted_zone_id}"
+  domain_name    = "${var.domain_name}"
 
   dcos_edition       = "${var.dcos_edition}"
   dcos_cluster_name  = "${var.dcos_cluster_name}"

@@ -13,9 +13,8 @@ module "openvpn" {
   tag_environment = "${var.tag_service}"
   tag_version     = "${var.tag_version}"
 
-  hosted_zone_id          = "${var.hosted_zone_id}"
-  domain_name             = "${var.domain_name}"
-  openvpn_dns_record_name = "${var.openvpn_dns_record_name}"
+  hosted_zone_id = "${var.hosted_zone_id}"
+  domain_name    = "${var.domain_name}"
 
   openvpn_admin_user = "${var.openvpn_admin_user}"
   openvpn_admin_pw   = "${var.openvpn_admin_pw}"

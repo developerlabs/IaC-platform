@@ -3,4 +3,3 @@
  */
 openvpn_admin_user = "openvpn"                  /* OpenVPN Admin username */
 openvpn_admin_pw = "openvpn"                    /* OpenVPN Admin password */
-openvpn_dns_record_name = "dummy"               /* Eg: openvpn, then record name would be openvpn.dummy.com */
