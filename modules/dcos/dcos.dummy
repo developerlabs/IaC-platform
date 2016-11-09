@@ -12,10 +12,6 @@ aws_ssl_certificate_arn_id = "Dummy"          /* ARN of the SSL certificate crea
  */
 domain_name = "dummy.com"                     /* Your domain name */
 hosted_zone_id = "DUMMY"                      /* ID of the Hosted Zone for above domain within Route53 */
-master_dns_record_name = "dummy"              /* Eg: dcos, then record name would be dcos.dummy.com */
-tyk_dns_record_name = "dummy"                 /* Eg: tyk, then record name would be tyk.dummy.com */
-jenkins_dns_record_name = "dummy"             /* Eg: jenkins, then record name would be jenkins.dummy.com */
-
 /**
  * DC/OS
  */
