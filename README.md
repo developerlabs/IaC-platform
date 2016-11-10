@@ -24,7 +24,7 @@ Then SSH into the manager node and perform the steps for installation.
 
 ##### Manual
 - An IAM account with administrator privileges.
-- [Terraform](https://www.terraform.io/intro/getting-started/install.html)
+- [Terraform 0.7.7](https://www.terraform.io/intro/getting-started/install.html)
 - AWS CLI
 
 #### Steps for installation
