@@ -106,6 +106,18 @@ By installing [Iac-Elk][iac-elk] you will be able to monitor the logs through aw
 | Jenkins URL | |
 | redis hostname |  |
 
+#### Tagging Conventions
+Tags provides specific identification of AWS resources. Following tags are mentioned in terraform.dummy.
+* pre_tag - This is used as a pre-text for 'Name' tags to identify AWS resources, DNS names & S3 bucket.
+* post_tag - This is used as a post-text for 'Name' tags to identify AWS resources, DNS names & S3 bucket. 
+
+Following restrictions applies:
+* pre_tag can be between 3 and 12 characters in length.
+* post_tag can be between 3 and 6 characters in length.
+* Tag name can contain only alphabets, numbers and dashes.
+* Tag name cannot begin or end with a dash.
+* Do not use `aws` as prefix.
+
 #### Jenkins restoration
 * Take backup of Jenkins home folder, excluding below files, to S3 bucket, as a tar gzip file (Eg: jenkins.tar.gz).
 ```
