@@ -14,7 +14,6 @@ module "dcos" {
   aws_ssl_certificate_arn_id = "${var.aws_ssl_certificate_arn_id}"
 
   key_pair_name                     = "${var.key_pair_name}"
-  master_user_data                  = "${var.master_user_data}"
   dcos_master_count                 = "${var.dcos_master_count}"
   agent_asg_desired_capacity        = "${var.agent_asg_desired_capacity}"
   public_agent_asg_desired_capacity = "${var.public_agent_asg_desired_capacity}"
